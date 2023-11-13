@@ -1,3 +1,5 @@
+//problem statement:https://www.codechef.com/practice/course/arrays-cpp/PCPPAR01/problems/KITCHENCOST
+
 #include <iostream>
 using namespace std;
 
