@@ -1,5 +1,5 @@
 //problem statement:https://www.codechef.com/practice/course/arrays-cpp/PCPPAR01/problems/KITCHENCOST
-
+//DATE:04-11-23
 #include <iostream>
 using namespace std;
 
