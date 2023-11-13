@@ -1,3 +1,7 @@
+//problem statement:https://www.codechef.com/practice/course/strings-cpp/PCPPST01/problems/DNASTORAGE
+//DATE:05-11-23
+//-----------------------solution-------------------------
+
 #include <iostream>
 using namespace std;
 
