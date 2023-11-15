@@ -1,0 +1,63 @@
+//problem statement: https://www.codechef.com/practice/course/arrays-strings-sorting/INTARR01/problems/EQUALELE
+//DATE:14-11-23
+---------------------solution-----------------------
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+bool canDefeatAllEnemies(int n, int h, const vector<int>& strengths, int resistance) {
+    for (int enemyStrength : strengths) {
+        if (enemyStrength <= resistance) {
+            continue;
+        } else if (h > enemyStrength) {
+            h -= enemyStrength;
+        } else {
+            return false;
+        }
+    }
+    return true;
+}
+
+int findMinResistance(int n, int h, const vector<int>& strengths) {
+    int low = 0;
+    int high = *max_element(strengths.begin(), strengths.end());
+
+    while (low < high) {
+        int mid = (low + high) / 2;
+        if (canDefeatAllEnemies(n, h, strengths, mid)) {
+            high = mid;
+        } else {
+            low = mid + 1;
+        }
+    }
+
+    return low;
+}
+
+int main() {
+    int t;
+    cin >> t;
+
+    vector<int> results;
+
+    for (int i = 0; i < t; ++i) {
+        int n, h;
+        cin >> n >> h;
+
+        vector<int> strengths(n);
+        for (int j = 0; j < n; ++j) {
+            cin >> strengths[j];
+        }
+
+        int result = findMinResistance(n, h, strengths);
+        results.push_back(result);
+    }
+
+    for (int result : results) {
+        cout << result << endl;
+    }
+
+    return 0;
+}
