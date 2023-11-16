@@ -1,0 +1,19 @@
+//problem statement: https://www.codechef.com/practice/course/2to3stars/LP2TO301/problems/ALTER
+//DATE: 16-11-23
+-------------------solution------------------
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t,a,b,p,q;
+	cin>>t;
+	while(t--)
+	{
+	    cin>>a>>b>>p>>q;
+	    if(p%a==0&&q%b==0&&abs((q/b)-(p/a))<=1)
+	    cout<<"YES"<<endl;
+	    else
+	    cout<<"NO"<<endl;
+	}
+	return 0;
+}
