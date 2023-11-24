@@ -1,0 +1,45 @@
+//problem statement: https://www.codechef.com/practice/course/two-pointers/POINTERF/problems/PREP17
+//DATE:24-11-23
+//------------------Solution-------------------
+#include <iostream>
+#include <unordered_set>
+#include <vector>
+
+using namespace std;
+
+int countCommonElements(vector<int>& A, vector<int>& B) {
+    unordered_set<int> setA(A.begin(), A.end());
+    int commonCount = 0;
+
+    for (int num : B) {
+        if (setA.find(num) != setA.end()) {
+            commonCount++;
+        }
+    }
+
+    return commonCount;
+}
+
+int main() {
+    int T;
+    cin >> T;
+
+    while (T--) {
+        int N;
+        cin >> N;
+
+        vector<int> A(N), B(N);
+        for (int i = 0; i < N; ++i) {
+            cin >> A[i];
+        }
+
+        for (int i = 0; i < N; ++i) {
+            cin >> B[i];
+        }
+
+        int result = countCommonElements(A, B);
+        cout << result << endl;
+    }
+
+    return 0;
+}
