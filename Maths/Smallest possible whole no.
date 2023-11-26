@@ -1,0 +1,24 @@
+//problem statement : https://www.codechef.com/practice/course/1to2stars/LP1TO201/problems/SMOL?tab=statement
+//DATE : 26-11-23
+//-------------------------------solution-------------------------------
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T;
+
+    while (T--) {
+        int N, K;
+        cin >> N >> K;
+
+        if (K == 0) {
+            cout << N << endl; // If K is zero, N remains unchanged
+        } else {
+            int result = N % K; // Find the remainder when N is divided by K
+            cout << result << endl;
+        }
+    }
+
+    return 0;
+}
