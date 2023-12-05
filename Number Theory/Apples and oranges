@@ -1,0 +1,29 @@
+//problem statement: https://www.codechef.com/practice/course/number-theory/INTNT01/problems/APPLEORANGE
+//DATE: 05-12-23
+//-------------------solution----------------------
+#include <iostream>
+using namespace std;
+
+long long gcd(long long a, long long b) {
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+}
+
+int main() {
+    int T;
+    cin >> T;
+
+    while (T--) {
+        long long N, M;
+        cin >> N >> M;
+
+        long long commonDivisor = gcd(N, M);
+        if (commonDivisor == 1)
+            cout << "1" << endl;
+        else
+            cout << commonDivisor << endl;
+    }
+
+    return 0;
+}
