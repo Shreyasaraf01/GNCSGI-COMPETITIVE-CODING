@@ -1,0 +1,28 @@
+//problem statement: https://www.codechef.com/problems/SEVENRINGS
+//DATE: 06-12-23
+//---------------------solution------------------------
+#include <iostream>
+using namespace std;
+
+bool isValidPhoneNumber(int totalBill) {
+    return totalBill >= 10000 && totalBill <= 99999;
+}
+
+int main() {
+    int T;
+    cin >> T;
+
+    while (T--) {
+        int N, X;
+        cin >> N >> X;
+
+        int totalBill = N * X;
+        if (isValidPhoneNumber(totalBill)) {
+            cout << "YES" << endl;
+        } else {
+            cout << "NO" << endl;
+        }
+    }
+
+    return 0;
+}
